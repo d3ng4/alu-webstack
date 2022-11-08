@@ -38,6 +38,7 @@ backend web-backend
         server 4976-web-02 54.227.58.38:80 check
 frontend http
         bind *:80
+	bind *:443 ssl crt /etc/ssl/www.d3ng4.tech/www.d3ng4.tech.pem
         mode http
         default_backend web-backend
 backend my_servers balance roundrobin server 4976-web-01 3.89.247.193 server 4976-web-02 54.227.58.38 frontend haproxy_inbound bind *:80 default_backend my_servers mode http
